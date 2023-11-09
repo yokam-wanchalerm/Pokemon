@@ -22,7 +22,7 @@ const PokemonList = (): React.FunctionComponentElement<any> => {
 
     return (
         <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
-            py={'1.5rem'} sx={{ opacity: 0.7 }} width={'100%'}>
+            py={'1.5rem'} width={'100%'}>
             <input type='text' id="searchbar" onKeyUp={(e: any) => setSearchText(e?.target?.value! || '')} />
             <Grid container>
                 {filterPokemonList.length > 0 ? filterPokemonList.map((p) =>
@@ -30,10 +30,15 @@ const PokemonList = (): React.FunctionComponentElement<any> => {
                         <Grid item xs={3}>
                             <PokemonItem data={p} />
                         </Grid>
-                    </React.Fragment>)! :
+                    </React.Fragment>)! : searchText ?
                     <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
                         py={'1.5rem'} sx={{ opacity: 0.7 }} width={'100%'}>
                         <h1>Not Found</h1>
+                    </Box>
+                    :
+                    <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
+                        py={'1.5rem'} sx={{ opacity: 0.7 }} width={'100%'}>
+                        <h1>Loading</h1>
                     </Box>
                 }
             </Grid>
