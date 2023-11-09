@@ -1,6 +1,6 @@
 class PageRoute {
     static readonly HOME = "/";
-    static readonly DETAIL = "/detail/:id";
+    static readonly DETAIL = "/:name";
 
     static DEFAULT = PageRoute.HOME;
 }

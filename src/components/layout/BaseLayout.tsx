@@ -21,8 +21,7 @@ const BaseLayout = () => {
     ];
 
     const handleToggleDarkMode = () => {
-        let oppositeOfCurrentDarkMode = !darkMode
-        console.log(oppositeOfCurrentDarkMode)
+        let oppositeOfCurrentDarkMode = !darkMode;
         localStorage.setItem('darkMode', `${oppositeOfCurrentDarkMode}`)
         setDarkMode(oppositeOfCurrentDarkMode)
     }
