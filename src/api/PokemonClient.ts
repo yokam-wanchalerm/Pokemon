@@ -11,7 +11,7 @@ export class PokemonClient {
         }
         return Promise.all(promises).then((results) => {
             return results.map((result) => ({
-                name: result.name,
+                name: result.name.charAt(0).toUpperCase() + result.name.slice(1),
                 image: result.sprites['front_default'],
                 type: result.types.map((type: any) => type.type.name).join(', '),
                 id: result.id
